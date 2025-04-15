@@ -374,36 +374,61 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                padding: 15px;
-            }
-            
-            nav ul {
-                margin-top: 20px;
-            }
-            
-            nav ul li {
-                margin-left: 15px;
-            }
-            
-            .hero {
-                height: auto;
-                padding: 100px 0;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-        }
-    </style>
+      
+
+
+@media (max-width: 768px) {
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #fff;
+        margin-top: 10px;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 20px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav ul {
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin-left: 15px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 100px 0;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+}
+
+   </style>
 </head>
 <body>
     <!-- Header -->
@@ -412,6 +437,12 @@
             <div class="logo">
                 <img src="images/aurico-logo.jpg" alt="Aurico Alloys LLP Logo">
                 <h1>Aurico Alloys LLP</h1>
+            </div>
+  
+
+            <!-- Mobile Toggle Icon -->
+            <div class="mobile-menu-icon">
+                <i class="fas fa-bars"></i>
             </div>
             
             <nav>
@@ -616,13 +647,16 @@
     
     <!-- JavaScript -->
     <script>
-        // Simple language selector functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // This would be replaced with actual language switching logic
-            console.log('Language selector ready');
-            
-            // Mobile menu toggle would be added here for responsive design
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('Language selector ready');
+
+        const mobileIcon = document.querySelector('.mobile-menu-icon');
+        const navMenu = document.querySelector('nav ul');
+
+        mobileIcon.addEventListener('click', function () {
+            navMenu.classList.toggle('active');
         });
+    });
     </script>
 </body>
 </html>
