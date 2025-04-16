@@ -9,7 +9,7 @@
     <title>Aurico Alloys LLP | Nickel Strips, Nickel Alloy, Titanium & Stainless Steel </title>
     
     <!-- Favicon -->
-    <link rel="icon" type="ico" href="aurico-favicon.ico">
+    <link rel="icon" type="png" href="aurico-favicon.png">
     
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -540,6 +540,7 @@
                         <h3>Pure Nickel</h3>
                         <p>Corrosion-resistant solutions</p>
                     </div>
+                   </a>
                 </div>
                 
                 <div class="product-card">
@@ -549,6 +550,7 @@
                         <h3>Nickel Alloys</h3>
                         <p>High-temperature & Corrosion resistant applications</p>
                     </div>
+                  </a>
                 </div>
                 
                 <div class="product-card">
@@ -558,6 +560,7 @@
                         <h3>Titanium & Alloys</h3>
                         <p>Lightweight and durable</p>
                     </div>
+                  </a>
                 </div>
                 
                 <div class="product-card">
@@ -567,15 +570,17 @@
                         <h3>Duplex & Stainless Steel</h3>
                         <p>Custom formulations</p>
                     </div>
+                  </a>
                 </div>
-<div class="product-card">
- <a href="pages/materials/cobalt-alloys.html">
+              <div class="product-card">
+                 <a href="pages/materials/cobalt-alloys.html">
                     <img src="docs/images/cobalt-alloys.jpg" alt="Cobalt Alloys">
-                    <div class="product-overlay">
+                      <div class="product-overlay">
                         <h3>Cobalt Alloys</h3>
-                        <p>Lightweight and durable</p>
-                    </div>
-                </div>
+                          <p>Lightweight and durable</p>
+                      </div>
+                  </a>
+              </div>
 
             </div>
         </div>
@@ -589,7 +594,7 @@
                     <h2>About Aurico Alloys LLP</h2>
                     <p>Founded in 2010, Aurico Alloys LLP has grown to become a trusted name in the alloy industry, serving clients across multiple continents. Our commitment to quality, innovation, and customer service sets us apart in the competitive metals market.</p>
                     <p>With state-of-the-art manufacturing facilities and a team of experienced metallurgists, we deliver alloy solutions that meet the most demanding specifications.</p>
-                    <a href="Content/about.html" class="btn btn-primary">Learn More</a>
+                    <a href="pages/about.html" class="btn btn-primary">Learn More</a>
                 </div>
                 <div class="about-image">
                     <img src="docs/images/aurico-office.jpg" alt="Aurico Alloys Office">
@@ -622,7 +627,7 @@
                         <li><a href="pages/about.html">About Us</a></li>
                         <li><a href="pages/products.html">Product Forms</a></li>
                         <li><a href="pages/materials.html">Materials</a></li>
-                        <li><a href="pages/quality.html">Quality Assurance</a></li>
+                        <li><a href="pages/quality.html">Quality</a></li>
                         <li><a href="pages/contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -641,8 +646,9 @@
                 <div class="footer-contact">
                     <h3>Contact Us</h3>
                     <p><i class="fas fa-map-marker-alt"></i> 112, 1st Floor, Aman Grih, Carptenter 1st Street, C.P.Tank, Mumbai-400004, India</p>
-                    <p><i class="fas fa-phone"></i> +91 22 6743 6611 / +91 7977 88 6611</p>
-                    <p><i class="fas fa-envelope"></i> info@auricoalloys.com</p>
+                    <p><i class="fas fa-phone"></i> +91 22 6743 6611</p>
+                    <p><i class="fas fa-phone"></i> +91 7977 88 6611</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@auricoalloys.com">info@auricoalloys.com</a></p>
                 </div>
             </div>
             
@@ -664,6 +670,30 @@
             navMenu.classList.toggle('active');
         });
     });
-    </script>
+</script>
+
+
+    <script>
+    // Animate feature cards on scroll into view
+    document.addEventListener('DOMContentLoaded', () => {
+        const featureCards = document.querySelectorAll('.feature-card');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, {
+            threshold: 0.3 // Adjust for when to trigger the animation
+        });
+
+        featureCards.forEach(card => {
+            observer.observe(card);
+        });
+    });
+</script>
+
 </body>
 </html>

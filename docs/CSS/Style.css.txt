@@ -234,6 +234,24 @@ nav ul li a:hover {
     margin-bottom: 15px;
     color: var(--primary-color);
 }
+/* Feature Card Animation */
+.feature-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.feature-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation for hover effect */
+.feature-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
 
 /* Products Preview */
 .products-preview {
@@ -358,12 +376,22 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Hide menu icon by default */
+.mobile-menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
         padding: 15px;
     }
+.mobile-menu-icon {
+    display: block;
+}
     
     nav ul {
         margin-top: 20px;
@@ -386,4 +414,32 @@ footer {
     .about-content {
         flex-direction: column;
     }
+
 }
+
+/* Footer contact email link styling */
+footer .footer-contact p a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+footer .footer-contact p a:hover {
+  color: var(--secondary-color);
+}
+
+footer .footer-contact p a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+footer .footer-contact p a:hover::after {
+  width: 100%;
+}
+
